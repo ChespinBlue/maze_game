@@ -1,0 +1,303 @@
+[gd_scene format=3 uid="uid://cwxo5rsmhvcql"]
+
+[ext_resource type="Script" uid="uid://ch537eka58xmo" path="res://assets/ui/title_screen/title_screen.gd" id="1_64phk"]
+[ext_resource type="Theme" uid="uid://c4ihmbjpbjfw5" path="res://assets/ui/main_theme.tres" id="1_xnb0o"]
+[ext_resource type="Script" uid="uid://dqha2g4of1nij" path="res://assets/ui/title_screen/achievments.gd" id="3_ys46d"]
+[ext_resource type="PackedScene" uid="uid://ds53bmxj8cbqt" path="res://assets/ui/title_screen/achiev_slot.tscn" id="4_ys46d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekb3f"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puixd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys46d"]
+bg_color = Color(8.5432083e-07, 0.3666155, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2flb"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uruqp"]
+font_size = 40
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xnb0o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64phk"]
+
+[node name="title_screen" type="CanvasLayer" unique_id=1081987508]
+script = ExtResource("1_64phk")
+
+[node name="back" type="Panel" parent="." unique_id=132702364]
+texture_filter = 1
+offset_left = 81.0
+offset_top = 28.0
+offset_right = 348.0
+offset_bottom = 292.0
+pivot_offset = Vector2(400, 400)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekb3f")
+metadata/_edit_lock_ = true
+
+[node name="start4" type="Button" parent="." unique_id=1226517529 groups=["UI_buttons"]]
+visible = false
+offset_left = 335.0
+offset_top = 116.0
+offset_right = 402.0
+offset_bottom = 152.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_xnb0o")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_puixd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ys46d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i2flb")
+text = "B. 3"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=4412748]
+offset_left = 99.0
+offset_top = 116.0
+offset_right = 330.0
+offset_bottom = 275.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=660455919]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="start" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1533232891 groups=["UI_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_xnb0o")
+text = "Start"
+
+[node name="start2" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1461762189 groups=["UI_buttons"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_xnb0o")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ys46d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i2flb")
+text = "Bonus"
+
+[node name="start3" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1096690196 groups=["UI_buttons"]]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_xnb0o")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ys46d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i2flb")
+text = "B. 2"
+
+[node name="tutorial" type="Button" parent="VBoxContainer" unique_id=1192866393 groups=["UI_buttons"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_xnb0o")
+text = "Tutorial"
+
+[node name="achievs" type="Button" parent="VBoxContainer" unique_id=1362572648 groups=["UI_buttons"]]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_xnb0o")
+text = "Achievments"
+
+[node name="exit" type="Button" parent="VBoxContainer" unique_id=1475005654 groups=["UI_buttons"]]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_xnb0o")
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=375135676]
+offset_left = 101.0
+offset_top = 41.0
+offset_right = 333.0
+offset_bottom = 98.0
+text = "Maze Game"
+label_settings = SubResource("LabelSettings_uruqp")
+metadata/_edit_lock_ = true
+
+[node name="controls_menu" type="Panel" parent="." unique_id=864018038]
+visible = false
+texture_filter = 1
+offset_left = 81.0
+offset_top = 28.0
+offset_right = 348.0
+offset_bottom = 292.0
+pivot_offset = Vector2(400, 400)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekb3f")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="controls_menu" unique_id=445241732]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 250.0
+offset_bottom = 205.0
+theme = ExtResource("1_xnb0o")
+text = "           Tutorial
+Get to the end of the maze. Find keys to open doors. Keys aren't lost when a maze is reset.
+
+Controls:
+Walk - WASD
+Jump - Spacebar
+Restart - R
+"
+autowrap_mode = 3
+
+[node name="return" type="Button" parent="controls_menu" unique_id=373181739 groups=["UI_buttons"]]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 218.0
+offset_right = 234.0
+offset_bottom = 254.0
+theme = ExtResource("1_xnb0o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xnb0o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_64phk")
+text = "Go Back"
+
+[node name="achievments" type="Panel" parent="." unique_id=1919740013]
+texture_filter = 1
+offset_left = 81.0
+offset_top = 28.0
+offset_right = 348.0
+offset_bottom = 292.0
+pivot_offset = Vector2(400, 400)
+theme = ExtResource("1_xnb0o")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ekb3f")
+script = ExtResource("3_ys46d")
+metadata/_edit_lock_ = true
+
+[node name="title" type="Label" parent="achievments" unique_id=1681511193]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 9.0
+offset_right = 184.0
+offset_bottom = 28.0
+text = "Achievments"
+
+[node name="number" type="Label" parent="achievments" unique_id=2066042804]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 233.0
+offset_right = 68.0
+offset_bottom = 252.0
+text = "1/6"
+
+[node name="return" type="Button" parent="achievments" unique_id=591827982 groups=["UI_buttons"]]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 225.0
+offset_right = 253.0
+offset_bottom = 256.0
+theme = ExtResource("1_xnb0o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xnb0o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_64phk")
+text = "Go Back"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="achievments" unique_id=1272332385]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 31.0
+offset_right = 250.0
+offset_bottom = 222.0
+theme = ExtResource("1_xnb0o")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="achievments/ScrollContainer" unique_id=2147174362]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+metadata/_edit_lock_ = true
+
+[node name="achiev_slot1" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1073480438 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot2" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=515147966 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot3" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=702704012 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot4" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1814591546 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot5" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1102843612 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot6" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1492682358 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot7" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1491645000 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot8" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1805443944 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot9" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1306761480 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot10" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=103822414 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot11" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1496241039 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot12" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=745381352 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot13" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1120595469 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot14" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1335728577 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot15" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=2133431773 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot16" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1871418257 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot17" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=875924432 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot18" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1852964051 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot19" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1711564363 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="achiev_slot20" parent="achievments/ScrollContainer/VBoxContainer2" unique_id=1412471305 instance=ExtResource("4_ys46d")]
+layout_mode = 2
+
+[node name="allacheivbutton" type="Button" parent="." unique_id=874114619]
+visible = false
+offset_right = 37.0
+offset_bottom = 30.0
+text = "all"
+
+[connection signal="pressed" from="start4" to="." method="_on_start_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/start2" to="." method="_on_start_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/start3" to="." method="_on_start_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="VBoxContainer/achievs" to="." method="_on_achievs_pressed"]
+[connection signal="pressed" from="VBoxContainer/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="controls_menu/return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="achievments/return" to="achievments" method="_on_return_pressed"]
+[connection signal="pressed" from="allacheivbutton" to="." method="_on_allacheivbutton_pressed"]

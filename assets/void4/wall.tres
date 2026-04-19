@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://rd5xkicyj84n"]
+
+[ext_resource type="Texture2D" uid="uid://ciber2rveho58" path="res://assets/maze3/wall.png" id="1_clc2w"]
+
+[resource]
+albedo_color = Color(0.52680016, 0.5268002, 0.52680016, 1)
+albedo_texture = ExtResource("1_clc2w")
+uv1_scale = Vector3(100, 100, 100)
+texture_filter = 0

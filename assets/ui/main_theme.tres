@@ -1,0 +1,70 @@
+[gd_resource type="Theme" format=3 uid="uid://c4ihmbjpbjfw5"]
+
+[ext_resource type="FontFile" uid="uid://6xj38of7ygrm" path="res://assets/fonts/Pixel New Roman.ttf" id="1_cstew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cstew"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ys46d"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mdnfb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64phk"]
+bg_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx6pb"]
+content_margin_left = 149.0
+content_margin_top = 160.0
+content_margin_right = 214.0
+content_margin_bottom = 231.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cstew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdnfb"]
+bg_color = Color(0.59082556, 0.5908255, 0.59082574, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gx6pb"]
+bg_color = Color(0.68235296, 0.9490196, 0.69803923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r315b"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ufljk"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+default_font = ExtResource("1_cstew")
+default_font_size = 18
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.68235296, 0.9490196, 0.69803923, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_cstew")
+Button/styles/hover = SubResource("StyleBoxFlat_ys46d")
+Button/styles/normal = SubResource("StyleBoxEmpty_mdnfb")
+Button/styles/pressed = SubResource("StyleBoxFlat_64phk")
+Panel/styles/panel = SubResource("StyleBoxEmpty_gx6pb")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_cstew")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_mdnfb")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_gx6pb")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_r315b")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_ufljk")

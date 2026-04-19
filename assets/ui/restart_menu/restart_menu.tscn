@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bnmc52iyn3dyj"]
+
+[ext_resource type="Texture2D" uid="uid://55skjkm62i8n" path="res://assets/screen_space.png" id="1_4ml4i"]
+[ext_resource type="Script" uid="uid://dmfw4x7rhuslw" path="res://assets/ui/restart_menu/restart_menu.gd" id="1_vjpef"]
+[ext_resource type="Theme" uid="uid://c4ihmbjpbjfw5" path="res://assets/ui/main_theme.tres" id="2_pqmm3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ml4i"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="restart_menu" type="CanvasLayer" unique_id=988579505]
+script = ExtResource("1_vjpef")
+
+[node name="ruler" type="Sprite2D" parent="." unique_id=1673039313]
+visible = false
+texture_filter = 1
+position = Vector2(212.5, 160)
+texture = ExtResource("1_4ml4i")
+
+[node name="Panel" type="Panel" parent="." unique_id=1026438183]
+offset_left = 110.0
+offset_top = 89.0
+offset_right = 319.0
+offset_bottom = 235.0
+theme = ExtResource("2_pqmm3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ml4i")
+
+[node name="Label" type="Label" parent="Panel" unique_id=601811098]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 191.0
+offset_bottom = 52.0
+text = "Do you want to restart the maze?"
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1513351350]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 67.0
+offset_right = 193.0
+offset_bottom = 132.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer" unique_id=927722110]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="no" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=806824807 groups=["UI_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "No
+"
+
+[node name="yes" type="Button" parent="Panel/VBoxContainer/HBoxContainer" unique_id=808052177 groups=["UI_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes
+"
+
+[node name="return" type="Button" parent="Panel/VBoxContainer" unique_id=1019258792 groups=["UI_buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Return to Title"
+
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/no" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/return" to="." method="_on_return_pressed"]

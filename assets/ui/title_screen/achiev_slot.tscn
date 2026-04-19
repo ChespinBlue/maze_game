@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ds53bmxj8cbqt"]
+
+[ext_resource type="Texture2D" uid="uid://bjdjay4l1hnn5" path="res://assets/ui/title_screen/check.png" id="1_a2dyt"]
+[ext_resource type="Script" uid="uid://baetklc44fhum" path="res://assets/ui/title_screen/achiev_slot.gd" id="1_j06ec"]
+[ext_resource type="Theme" uid="uid://c4ihmbjpbjfw5" path="res://assets/ui/main_theme.tres" id="1_op7hj"]
+
+[node name="achiev_slot" type="HBoxContainer" unique_id=1073480438]
+offset_right = 153.0
+offset_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+script = ExtResource("1_j06ec")
+
+[node name="label" type="Label" parent="." unique_id=1070315820]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0.7254902, 1)
+text = "Finish the ma"
+autowrap_mode = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1379276067]
+custom_minimum_size = Vector2(34, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_op7hj")
+
+[node name="check" type="Sprite2D" parent="PanelContainer" unique_id=395205440]
+position = Vector2(12, 12)
+texture = ExtResource("1_a2dyt")
