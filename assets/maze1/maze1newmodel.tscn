@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c3foht7angttq"]
+
+[ext_resource type="PackedScene" uid="uid://c6jj7vl51dtlk" path="res://assets/maze1/maze1.glb" id="1_lgdq8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8sfnb"]
+shading_mode = 2
+albedo_color = Color(0.65834, 0.65834, 0.6583398, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a207g"]
+shading_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyrr5"]
+shading_mode = 2
+albedo_color = Color(0.5, 0.110000014, 0.110000014, 1)
+
+[node name="maze1" unique_id=879711629 instance=ExtResource("1_lgdq8")]
+
+[node name="Cube" parent="." index="0" unique_id=93134985]
+surface_material_override/0 = SubResource("StandardMaterial3D_8sfnb")
+surface_material_override/1 = SubResource("StandardMaterial3D_a207g")
+surface_material_override/3 = SubResource("StandardMaterial3D_cyrr5")

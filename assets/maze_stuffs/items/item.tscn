@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cxvx147nwy5la"]
+
+[ext_resource type="Script" uid="uid://bnef5rugib04k" path="res://assets/maze_stuffs/items/item.gd" id="2_ojqro"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m6kic"]
+radius = 0.4
+
+[node name="item" type="Sprite3D" unique_id=221146313]
+pixel_size = 0.02
+billboard = 1
+texture_filter = 0
+script = ExtResource("2_ojqro")
+
+[node name="area" type="Area3D" parent="." unique_id=1282317586]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area" unique_id=572751942]
+shape = SubResource("SphereShape3D_m6kic")
+debug_color = Color(0.99, 0, 0, 1)
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

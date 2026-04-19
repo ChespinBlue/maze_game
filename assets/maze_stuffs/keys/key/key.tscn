@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cbs7n1jfpvo4l"]
+
+[ext_resource type="Texture2D" uid="uid://ci34uygxco3tn" path="res://assets/maze_stuffs/keys/key/key_r.png" id="1_scnbu"]
+[ext_resource type="Script" uid="uid://b8s4i8auq3n8r" path="res://assets/maze_stuffs/keys/key/key.gd" id="2_8t01o"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m6kic"]
+radius = 0.4
+
+[node name="key" type="Sprite3D" unique_id=221146313]
+pixel_size = 0.02
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_scnbu")
+script = ExtResource("2_8t01o")
+
+[node name="area" type="Area3D" parent="." unique_id=1282317586]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area" unique_id=572751942]
+shape = SubResource("SphereShape3D_m6kic")
+debug_color = Color(0.99, 0, 0, 1)
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
