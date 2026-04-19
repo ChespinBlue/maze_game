@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://b6ukfe6vtr05n"]
+
+[ext_resource type="PackedScene" uid="uid://bnmc52iyn3dyj" path="res://assets/ui/restart_menu/restart_menu.tscn" id="1_o6xl0"]
+[ext_resource type="Script" uid="uid://b6uls4id78lvk" path="res://scenes/main.gd" id="1_tefeu"]
+[ext_resource type="PackedScene" uid="uid://pndrcm7u3hkl" path="res://assets/player/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://cwxo5rsmhvcql" path="res://assets/ui/title_screen/title_screen.tscn" id="2_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://c8ejru1ck31w2" path="res://assets/dither2.1.png" id="3_jyhfs"]
+[ext_resource type="Shader" uid="uid://dbaojcwwut200" path="res://scenes/shaders/2d/color.gdshader" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://bsnpl1umu1nqs" path="res://assets/ui/title_screen/title_cam_center.gd" id="5_85g3d"]
+[ext_resource type="PackedScene" uid="uid://ibknfwwnplnh" path="res://assets/ui/win_screen/win_screen.tscn" id="5_tbgi4"]
+[ext_resource type="Script" uid="uid://dnj3oiq6fjvju" path="res://scenes/sound_manager.gd" id="10_choun"]
+[ext_resource type="AudioStream" uid="uid://c35jj1pgiwwul" path="res://assets/audio/sfx/click.mp3" id="11_ya4ey"]
+
+[sub_resource type="Environment" id="Environment_o5qli"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.5313, 0.66090494, 0.69, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jyhfs"]
+shader = ExtResource("3_sugp2")
+
+[node name="main" type="Node3D" unique_id=1794251382]
+script = ExtResource("1_tefeu")
+
+[node name="restart_menu" parent="." unique_id=988579505 instance=ExtResource("1_o6xl0")]
+
+[node name="win_screen" parent="." unique_id=1849185719 instance=ExtResource("5_tbgi4")]
+
+[node name="title_screen" parent="." unique_id=1081987508 instance=ExtResource("2_o6xl0")]
+
+[node name="title_cam_center" type="Node3D" parent="title_screen" unique_id=351398722]
+transform = Transform3D(0.59754765, 0, -0.8391719, 0, 1, 0, 0.8391719, 0, 0.59754765, 0, 0, 0)
+script = ExtResource("5_85g3d")
+
+[node name="Camera3D" type="Camera3D" parent="title_screen/title_cam_center" unique_id=1382938971]
+transform = Transform3D(0.67687595, -0.47315407, 0.56388307, 0, 0.76604444, 0.6427876, -0.7360971, -0.43508744, 0.5185171, 10.3586235, 14.524189, 10)
+current = true
+fov = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1457200514]
+environment = SubResource("Environment_o5qli")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=811918362]
+transform = Transform3D(0.97038853, 0.17367986, -0.1678731, 0.022958433, 0.6255213, 0.77986926, 0.24045578, -0.76063025, 0.60301125, 0, 34.811638, 0)
+light_color = Color(1, 0.8613334, 0.74, 1)
+shadow_enabled = true
+shadow_blur = 0.0
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 50.0
+directional_shadow_pancake_size = 40.0
+
+[node name="player" parent="." unique_id=2059796842 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 8, 20.891068)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="player" unique_id=1334313770]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=58210110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.65972, 0.5790711, -10.9902725)
+
+[node name="dither" type="Sprite2D" parent="." unique_id=1475715140]
+position = Vector2(256, 188.71)
+texture = ExtResource("3_jyhfs")
+
+[node name="color" type="SubViewportContainer" parent="." unique_id=1758492846]
+material = SubResource("ShaderMaterial_jyhfs")
+offset_right = 1184.0
+offset_bottom = 698.0
+
+[node name="SubViewport" type="SubViewport" parent="color" unique_id=975103649]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="sound_manager" type="Node" parent="." unique_id=1081351594]
+script = ExtResource("10_choun")
+
+[node name="button_sound" type="AudioStreamPlayer" parent="sound_manager" unique_id=2007464784]
+stream = ExtResource("11_ya4ey")
+
+[node name="music_player" type="AudioStreamPlayer" parent="sound_manager" unique_id=1527768841]
+
+[node name="Label" type="Label" parent="." unique_id=45416644]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="start" from="title_screen" to="." method="_on_title_screen_start"]
+[connection signal="finished" from="sound_manager/music_player" to="sound_manager" method="_on_music_player_finished"]
